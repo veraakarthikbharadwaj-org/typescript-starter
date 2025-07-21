@@ -7,7 +7,7 @@ on:
   workflow_dispatch:  # Optional: allows manual runs from the Actions tab
 
 jobs:
-  veracode-sourceclear-scan:
+  sca-scan:
     runs-on: ubuntu-latest
 
     env:
