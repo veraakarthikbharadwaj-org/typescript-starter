@@ -10,6 +10,9 @@ jobs:
   veracode-sourceclear-scan:
     runs-on: ubuntu-latest
 
+    env:
+      SRCCLR_API_TOKEN: ${{ secrets.SRCCLR_API_TOKEN }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
