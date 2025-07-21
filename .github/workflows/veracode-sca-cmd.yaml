@@ -1,0 +1,19 @@
+name: Veracode SCA Scan - Command run
+
+on:
+  push:
+    branches:
+      - '*'  # Trigger on all branches
+  workflow_dispatch:  # Optional: allows manual runs from the Actions tab
+
+jobs:
+  veracode-sourceclear-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run SCA scan
+        run: |
+          curl -sSL https://download.sourceclear.com/ci.sh | sh -s -- scan . --recursive --allow-dirty --debug
